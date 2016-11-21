@@ -5,7 +5,14 @@ function reducer(state, action) {
   switch (action.type) {
     case 'INIT':
       return newState
-      break;
+
+    case 'RECEIVE_BEERS':
+      newState.beers = action.payload
+      return newState
+
+      case 'TOGGLE_LOADING':
+      newState.isLoading = !newState.isLoading
+
     default:
       return newState
   }
